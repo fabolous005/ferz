@@ -1,3 +1,4 @@
+#[derive(Copy, Clone)]
 enum Color {
     White,
     Black,
@@ -19,10 +20,12 @@ struct Square {
     rank: Rank,
 }
 
+#[derive(Copy, Clone)]
 enum File {
     A, B, C, D, E, F, G, H
 }
 
+#[derive(Copy, Clone)]
 enum Rank {
     R1, R2, R3, R4, R5, R6, R7, R8
 }
@@ -40,14 +43,6 @@ struct Input {
     white_to_move: bool,            // color to move (either White or Black)
     en_passant: Option<Square>,     // en passant square, if any
     castling_rights: CastlingRights // castling rights for both sides
-}
-
-impl InputLayer {
-    fn new() -> Self {
-        Self {
-            board: [[None; 8]; 8],
-        }
-    }
 }
 
 fn main() {
